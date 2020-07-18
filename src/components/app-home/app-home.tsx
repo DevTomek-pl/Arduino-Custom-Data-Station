@@ -2,7 +2,6 @@ import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'app-home',
-  styleUrl: 'app-home.css'
 })
 export class AppHome {
 
@@ -21,8 +20,6 @@ export class AppHome {
           README for everything that comes in this starter out of the box and
           check out our docs on <a href="https://stenciljs.com">stenciljs.com</a> to get started.
         </p>
-
-        <ion-button href="/profile/ionic" expand="block">Profile page</ion-button>
       </ion-content>
     ];
   }
