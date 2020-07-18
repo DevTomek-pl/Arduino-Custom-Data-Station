@@ -16,10 +16,12 @@
   },
   "devDependencies": {
     "@ionic/core": "^5.0.7",
-    "@stencil/core": "^1.12.2"
-  },
-  "dependencies": {
+    "@stencil/core": "^1.12.2",
+    "@types/chart.js": "^2.9.24",
     "@types/jest": "^26.0.4",
     "puppeteer": "^5.0.0"
+  },
+  "dependencies": {
+    "chart.js": "^2.9.3"
   }
 }

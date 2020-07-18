@@ -10,6 +10,15 @@ export namespace Components {
     }
     interface AppRoot {
     }
+    interface TimeSeriesChart {
+        "addValue": (value: number) => Promise<void>;
+        "color": string;
+        "header": string;
+        "label": string;
+        "size": number;
+        "xAxisLabel": string;
+        "yAxisLabel": string;
+    }
 }
 declare global {
     interface HTMLAppHomeElement extends Components.AppHome, HTMLStencilElement {
@@ -24,9 +33,16 @@ declare global {
         prototype: HTMLAppRootElement;
         new (): HTMLAppRootElement;
     };
+    interface HTMLTimeSeriesChartElement extends Components.TimeSeriesChart, HTMLStencilElement {
+    }
+    var HTMLTimeSeriesChartElement: {
+        prototype: HTMLTimeSeriesChartElement;
+        new (): HTMLTimeSeriesChartElement;
+    };
     interface HTMLElementTagNameMap {
         "app-home": HTMLAppHomeElement;
         "app-root": HTMLAppRootElement;
+        "time-series-chart": HTMLTimeSeriesChartElement;
     }
 }
 declare namespace LocalJSX {
@@ -34,9 +50,18 @@ declare namespace LocalJSX {
     }
     interface AppRoot {
     }
+    interface TimeSeriesChart {
+        "color"?: string;
+        "header"?: string;
+        "label"?: string;
+        "size"?: number;
+        "xAxisLabel"?: string;
+        "yAxisLabel"?: string;
+    }
     interface IntrinsicElements {
         "app-home": AppHome;
         "app-root": AppRoot;
+        "time-series-chart": TimeSeriesChart;
     }
 }
 export { LocalJSX as JSX };
@@ -45,6 +70,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "app-home": LocalJSX.AppHome & JSXBase.HTMLAttributes<HTMLAppHomeElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
+            "time-series-chart": LocalJSX.TimeSeriesChart & JSXBase.HTMLAttributes<HTMLTimeSeriesChartElement>;
         }
     }
 }
